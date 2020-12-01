@@ -24,6 +24,7 @@ target_include_directories (
 add_executable (
     app
     ${APP_SOURCE}/app.cpp
+    ${APP_SOURCE}/test.py
 )
 
 target_include_directories (
@@ -40,4 +41,9 @@ target_link_libraries(
 add_dependencies(
     app
     python_module
+)
+
+set_property(
+    TARGET app
+    PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${APP_SOURCE}"
 )

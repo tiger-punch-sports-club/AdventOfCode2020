@@ -47,6 +47,7 @@ int main ()
     data.x = 33.0f;
 
     auto py_module = pybind11::module::import ("python_module");
+    auto test_python = pybind11::module::import ("test");
            
     printf ("end\n");
     return 0;
