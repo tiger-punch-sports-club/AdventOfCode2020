@@ -25,6 +25,7 @@ add_executable (
     app
     ${APP_SOURCE}/app.cpp
     ${APP_SOURCE}/test.py
+    ${APP_SOURCE}/test.txt
 )
 
 target_include_directories (
