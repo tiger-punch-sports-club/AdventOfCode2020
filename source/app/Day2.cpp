@@ -36,16 +36,12 @@ void Day2::RunPart1(pybind11::module& PythonHelperModule)
         int SpecialCharCount = 0;
         for(char* Char = &Password[0]; *Char != '\0'; Char++)
         {
-            if(*Char == SpecialChar)
-            {
-                SpecialCharCount++;
-            }
+            // if
+            SpecialCharCount += *Char == SpecialChar; 
         }
 
-        if(SpecialCharCount >= Minimum && SpecialCharCount <= Maximum)
-        {
-            NumValidPasswords++;
-        }
+        // if
+        NumValidPasswords += SpecialCharCount >= Minimum && SpecialCharCount <= Maximum;
     }
 
     printf("Num valid passwords: %d\n", NumValidPasswords);
@@ -76,12 +72,10 @@ void Day2::RunPart2(pybind11::module& PythonHelperModule)
         assert(Password[MaxPasswordLength - 1] == '\0' && "Password longer than MaxPasswordLength");
 
         const bool SpecialCharAtMin = Password[Minimum - 1] == SpecialChar; 
-        const bool SpecialCharAtMax = Password[Maximum - 1] == SpecialChar; 
-        
-        if (SpecialCharAtMin != SpecialCharAtMax)
-        {
-            NumValidPasswords++;
-        }
+        const bool SpecialCharAtMax = Password[Maximum - 1] == SpecialChar;
+
+        // if
+        NumValidPasswords += SpecialCharAtMin != SpecialCharAtMax;
     }
 
     printf("Num valid passwords: %d\n", NumValidPasswords);
