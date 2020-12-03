@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 #include "Day1.h"
+#include "Day2.h"
 
 void say_something ()
 {
@@ -35,8 +36,11 @@ int main ()
     pybind11::scoped_interpreter guard{};
     auto PythonHelperModule = pybind11::module::import ("PythonHelperModule");
 
-    Day1 day;
-    day.Run(PythonHelperModule);
+    Day1 day1;
+    day1.Run(PythonHelperModule);
+
+    Day2 day2;
+    day2.Run(PythonHelperModule);
     
     return 0;
     

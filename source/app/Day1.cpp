@@ -17,7 +17,7 @@ void Day1::Run(pybind11::module& PythonHelperModule)
         {
             numbers[numbers_count++] = std::stoi(number_str);
         }
-
+        
         int expenses = 0;
         bool done = false;
         for (int i = 0; i < numbers_count && !done; ++i)
