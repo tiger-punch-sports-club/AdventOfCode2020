@@ -24,8 +24,18 @@ target_include_directories (
 add_executable (
     app
     ${APP_SOURCE}/app.cpp
-    ${APP_SOURCE}/test.py
-    ${APP_SOURCE}/test.txt
+    ${APP_SOURCE}/PythonInclude.h
+    ${APP_SOURCE}/PythonHelperModule.py
+    
+    # Day 1
+    ${APP_SOURCE}/Day1.cpp
+    ${APP_SOURCE}/Day1.h
+    ${APP_SOURCE}/Day1.txt
+    
+    # Day 2
+    ${APP_SOURCE}/Day2.cpp
+    ${APP_SOURCE}/Day2.h
+    ${APP_SOURCE}/Day2.txt
 )
 
 target_include_directories (
